@@ -161,7 +161,7 @@ header {
 .author__section{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     gap: 10px;
 }
 .author__subheading{
@@ -171,12 +171,40 @@ header {
 .author__list{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: start;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.author__list li{
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--black);
+  transition: filter 0.3s ease;
+  
+}
+.author__list li:hover{
+  filter:none;
+}
+.author__list:hover li{
+  filter: blur(2px);
+}
+.author__list:hover li:hover{
+  filter:none;
+}
+.author__list li a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: var(--font-size-md);
+    color: var(--black);
+    width: 100%;
 }
 .author__date{
     font-size: var(--font-size-sm);
-    color: var(--light-gray);
+    color: var(--red);
 }
 .pagination{
     display: flex;

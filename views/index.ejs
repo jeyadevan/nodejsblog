@@ -8,12 +8,17 @@
 <section class="author__section">
     <h2 class="author__subheading">Career Highlights</h2>
     <ul class="author__list">
-        <li>
-            <a href="#">
-                <span>Post title</span>
-                <span class="author__date">January 1, 2024</span>
+        <% data.forEach(element => { %>
+         <li>
+            <a href="/post/<%= element._id %>" class="author__link">
+                <span><%- element.title %></span>
+                <span class="author__date"><%- element.createdAt.toLocaleDateString() %></span>
             </a>
         </li>
+        <% }) %>
+        
     </ul>
-    <a href="#" class="pagination">&lt; view previous posts</a>
+    <% if (nextpage !== null) { %>
+        <a href="?page=<%= parseInt(nextpage) %>" class="pagination">&lt; view previous posts</a>
+    <% } %>
 </section>
